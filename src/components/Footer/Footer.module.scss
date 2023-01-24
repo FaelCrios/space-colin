@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient($azul-claro, $azul-escuro) border-box;
+    padding-left: 3rem;
+
+    &__container {
+      
+      display: block;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10rem 10px;
+      width: 33%;
+      position: relative;
+      z-index: 0;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(to right, $rosa, $roxo) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+    }
+
+    .menu {
+        width: 18%;
+      
+        &__list {
+          padding-left: 1rem;
+          margin: 2rem;
+          height: 17.25rem;
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      
+        &__item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+      
+          &:first-child {
+            a {
+              font-weight: 700;
+              color: $roxo;
+              font-family: $fonte-normal;
+            }
+          }
+        }
+      
+        img {
+          margin-right: 0.5rem;
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+        }
+      
+        a {
+          text-decoration: none;
+          font-size: 1.125rem;
+          color: $cor-do-texto;
+          font-family: $fonte-normal
+        }
+      }
+  }
